@@ -122,34 +122,25 @@ textarea {
 .lisa-seror img{
 	display: block;
 
-
 }
 
-.tamer{
-	border: 1px solid black;
-	padding: 2%;
-}
-
-.row.biog{
-
-	margin-top: 10%;
-}
-
-.bio-lisa p {
-	font-size: 14pt;
-	font-family: roboto;
-	text-align: justify;
-
-}
-
-
-.text-univers{
-	font-size: 14pt;
+.bio-lisa{
 	margin-top: 5%;
-	font-family: roboto;
-	text-align: justify;
-
 }
+
+.row.bio {
+	margin-top: 10%;
+	height: 600px;
+	padding: 5%;
+	background-color: #F5F5F5;
+}
+
+.bio-lisa h2{
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-bottom: 2%;
+}
+
 
 
 
@@ -229,7 +220,7 @@ textarea {
 
 .copyright{
 	text-align: center;
-	margin-top: 180px;
+	margin-top: 100px;
 }
 
 
@@ -243,7 +234,3 @@ textarea {
 	margin-top: 10%;
 }
 
-.container{
-	padding: 5%;
-	background-color: #DCDCDC;
-}
