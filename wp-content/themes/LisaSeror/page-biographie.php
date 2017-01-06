@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 
-<h1 class="bio"><?php the_title(); ?> </h1>
+
 
 <div class="container">
 
-	<div class="row">
+	<div class="row biog">
 		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 lisa-seror pull-left">
 
 			<?php the_post_thumbnail('medium'); ?>
@@ -39,4 +39,6 @@
 
 </div>
 </body>
+
+<?php get_footer(); ?>
 
