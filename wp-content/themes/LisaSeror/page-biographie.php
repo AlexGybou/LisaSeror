@@ -5,39 +5,34 @@
 
 <div class="container">
 
-	<div class="row biog">
-		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 lisa-seror pull-left">
+	<div class="row bio">
 
-			<?php the_post_thumbnail('medium'); ?>
+		<div class="col-md-4">
+			<?php the_post_thumbnail('large', array( 'class' => 'img-responsive' )); ?>
+			
+			
 		</div>
 
-		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 bio-lisa">
+		<div class="col-md-1"></div>
+		<div class="bio-lisa">
 			<?php while ( have_posts() ) : the_post(); ?> 
-
 				<?php the_content(); ?> <!-- Page Content -->
-
-
 				<?php
 				endwhile; ?>
 
+
+				<div>
+					<h2> <?php the_field('titre2'); ?> </h2>
+					<div class="univers">
+						<?php the_field('contenu2'); ?>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
 			</div>
 		</div>
-
-
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 .col-lg-offset-2 text-univers">
-
-
-			<h2> <?php the_field('titre2'); ?> </h2>
-
-			<?php the_field('contenu2'); ?>
-
-
-		</div>
-
-
 	</div>
-
-</div>
 </body>
 
 <?php get_footer(); ?>
