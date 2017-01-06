@@ -1,0 +1,210 @@
+@font-face {
+	font-family: roboto;
+	src: url("font/Roboto-Thin.ttf");
+
+} 
+
+body{
+	background-color: #f5f5f5;
+	font-family: roboto;
+	margin-top: 10%;
+}
+
+
+/******************** CONTACT  *******************/
+
+.tableau {
+	background-image: url("../img/contact1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 636px;
+}
+
+.tableau-contact-info{
+	margin: auto;
+	top: 18%;
+	color: #fff;
+	margin-left: 3%;
+	font-size: 18pt;
+	margin-bottom: 1em;
+	margin-right: 24%;
+}
+
+.tableau-contact-info h1{
+	font-size: 36pt;
+	font-family: roboto;
+	font-weight:200;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.tableau-contact-info p{
+	margin-bottom: 1em;
+}
+
+/* FORMULAIRE*/
+
+.form-label {
+	font-size: 18pt;
+	color: #37474f;
+	font-weight:normal;
+	font-family: roboto;
+	display: block;
+	opacity: 1;
+	-webkit-transition: .333s ease top, .333s ease opacity;
+	transition: .333s ease top, .333s ease opacity;
+	margin-bottom: 5px;
+}
+
+
+.form-group {
+	margin-bottom: 2em;
+	margin-top: 2em;
+}
+
+.form-control {
+	border-radius: 0;
+	border-color: #ccc;
+	border-width: 0 0 2px 0;
+	border-style: none none solid none;
+	box-shadow: none;
+	background-color: #f5f5f5;
+	margin-bottom: 1em;
+}
+
+textarea {
+	resize: none;
+	background-color: #f5f5f5;
+}
+
+.col-xs-offset-3 {
+	margin-left: 0%;
+}
+
+.form-control:focus {
+	box-shadow: none;
+	border-color: #37474f;
+}
+
+.btn-start-order {
+	background: transparent;
+	border: 1px solid #2f323a;
+	border-radius: 3px;
+	color: #2f323a;
+	font-family: "Raleway", sans-serif;
+	font-size: 16px;
+	line-height: inherit;
+	margin: 81px 0px;
+	padding: 10px 50px;
+	text-transform: uppercase;
+	transition: all 0.25s ease 0s;
+	margin-right: 63%;
+}
+
+
+.btn-start-order:hover{
+	border-color: #37474f;
+	background-color: #85827b;
+	color: #37474f;
+}
+
+
+
+
+
+/******************** BIOGRAPHIE  *******************/
+
+.lisa-seror img{
+	display: block;
+}
+
+.bio{
+	text-align: center;
+}
+
+.bio-lisa p {
+	font-size: 14pt;
+	font-family: roboto;
+	text-align: justify;
+
+}
+
+.text-univers{
+	font-size: 14pt;
+	font-family: roboto;
+	text-align: justify;
+
+}
+
+
+
+/******************HOME**********************/
+.home {
+	margin-top: -9%;	
+}
+
+
+.cercle{
+
+	border-width: 2.47px;
+	border-color: rgb(255, 255, 255);
+	border-style: solid;
+	border-radius: 50%;
+	position: absolute;
+	left: 45%;
+	top: 120%;
+	width: 107.06px;
+	height: 107.06px;
+	z-index: 13;
+}
+
+.cercle p{
+	text-align: center;
+	margin-top: 35%;
+	font-size: 15pt;
+	color: rgb(255, 255, 255);
+	font-size: 14pt;
+	font-weight: lighter;	
+
+}
+
+.citation{
+	margin-top: -43%;
+	margin-left: 19%;
+}
+
+/**************	EXPO ********/
+.lisa{
+	padding-bottom: 4em;
+}
+.expo h1{
+	color: #37474f;
+	font-size: 32px;
+	font-weight: lighter;
+}
+
+.expo h2{
+	color: #37474f;
+	font-size: 18px;
+	padding-top: 2em;
+	font-weight: lighter;
+	padding-bottom: 4em;
+}
+
+.showsmall {
+	display: none;
+}
+
+.paddingzero {
+	padding: 0;
+}
+
+@media (max-width: 780px) {
+	.showsmall {
+		display: block;
+	}
+	.showlarge {
+		display:none;
+	}
+}
+
