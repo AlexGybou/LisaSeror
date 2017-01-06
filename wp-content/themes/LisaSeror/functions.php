@@ -7,26 +7,26 @@
 
 /*------------------------------------*\
 	External Modules/Files
-\*------------------------------------*/
+    \*------------------------------------*/
 
 // Load any external files you have here
 
 /*------------------------------------*\
 	Theme Support
-\*------------------------------------*/
+    \*------------------------------------*/
 
-if (!isset($content_width))
-{
-    $content_width = 900;
-}
+    if (!isset($content_width))
+    {
+        $content_width = 900;
+    }
 
-if (function_exists('add_theme_support'))
-{
+    if (function_exists('add_theme_support'))
+    {
     // Add Menu Support
-    add_theme_support('menus');
+        add_theme_support('menus');
 
     // Add Thumbnail Theme Support
-    add_theme_support('post-thumbnails');
+        add_theme_support('post-thumbnails');
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
@@ -60,7 +60,7 @@ if (function_exists('add_theme_support'))
 
 /*------------------------------------*\
 	Functions
-\*------------------------------------*/
+    \*------------------------------------*/
 
 // HTML5 Blank navigation
 /*function html5blank_nav()
@@ -181,7 +181,7 @@ if (function_exists('register_sidebar'))
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
-    ));
+        ));
 
     // Define Sidebar Widget Area 2
     register_sidebar(array(
@@ -192,7 +192,7 @@ if (function_exists('register_sidebar'))
         'after_widget' => '</div>',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
-    ));
+        ));
 }
 
 // Remove wp_head() injected Recent Comment styles
@@ -202,7 +202,7 @@ function my_remove_recent_comments_style()
     remove_action('wp_head', array(
         $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
         'recent_comments_style'
-    ));
+        ));
 }
 
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
@@ -215,7 +215,7 @@ function html5wp_pagination()
         'format' => '?paged=%#%',
         'current' => max(1, get_query_var('paged')),
         'total' => $wp_query->max_num_pages
-    ));
+        ));
 }
 
 // Custom Excerpts
@@ -304,40 +304,40 @@ function html5blankcomments($comment, $args, $depth)
 		$tag = 'li';
 		$add_below = 'div-comment';
 	}
-?>
+    ?>
     <!-- heads up: starting < for the html tag (li or div) in the next line: -->
     <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
+    <?php if ( 'div' != $args['style'] ) : ?>
+       <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+       <?php endif; ?>
+       <div class="comment-author vcard">
+           <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
+           <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+       </div>
+       <?php if ($comment->comment_approved == '0') : ?>
+           <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+           <br />
+       <?php endif; ?>
+
+       <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+          <?php
+          printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
+          ?>
+      </div>
+
+      <?php comment_text() ?>
+
+      <div class="reply">
+       <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+   </div>
+   <?php if ( 'div' != $args['style'] ) : ?>
+   </div>
 <?php endif; ?>
-
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
-
-	<?php comment_text() ?>
-
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
 <?php }
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
-\*------------------------------------*/
+    \*------------------------------------*/
 
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
@@ -396,7 +396,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 
 /*------------------------------------*\
 	Custom Post Types
-\*------------------------------------*/
+    \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 /*function create_post_type_html5()
@@ -454,7 +454,7 @@ function create_post_type_galerie() {
                 'search_items' => __('Chercher une oeuvre'),
                 'not_found' => __('Pas d\'oeuvre trouvée'),
                 'not_found_in_trash' => __('Pas d\'oeuvre trouvée dans la corbeille')
-            ),
+                ),
             'public' => true,
             'has_archive' => true,
             'supports' => array(
@@ -462,14 +462,14 @@ function create_post_type_galerie() {
                 'editor',
                 'excerpt',
                 'thumbnail'
-            ),
+                ),
             'taxonomies' => array(
                 'post_tag',
                 'category'
-            ),
+                ),
             'menu_icon' => 'dashicons-art'
-        )
-    );
+            )
+        );
 }
 
 function create_post_type_videos() {
@@ -490,7 +490,7 @@ function create_post_type_videos() {
                 'search_items' => __('Chercher une vidéo'),
                 'not_found' => __('Pas de vidéo trouvée'),
                 'not_found_in_trash' => __('Pas de vidéo trouvée dans la corbeille')
-            ),
+                ),
             'public' => true,
             'has_archive' => true,
             'supports' => array(
@@ -498,14 +498,14 @@ function create_post_type_videos() {
                 'editor',
                 'excerpt',
                 'thumbnail'
-            ),
+                ),
             'taxonomies' => array(
                 'post_tag',
                 'category'
-            ),
+                ),
             'menu_icon' => 'dashicons-format-video'
-        )
-    );
+            )
+        );
 }
 
 function create_post_type_events() {
@@ -526,7 +526,7 @@ function create_post_type_events() {
                 'search_items' => __('Chercher un évènement'),
                 'not_found' => __('Pas d\'évènement trouvé'),
                 'not_found_in_trash' => __('Pas d\'évènement trouvé  dans la corbeille')
-            ),
+                ),
             'public' => true,
             'has_archive' => true,
             'supports' => array(
@@ -534,23 +534,23 @@ function create_post_type_events() {
                 'editor',
                 'excerpt',
                 'thumbnail'
-            ),
+                ),
             'taxonomies' => array(
                 'post_tag',
                 'category'
-            ),
+                ),
             'menu_icon' => 'dashicons-calendar-alt'
-        )
-    );
+            )
+        );
 }
 
 /*------------------------------------*\
 	ShortCode Functions
-\*------------------------------------*/
+    \*------------------------------------*/
 
 // Shortcode Demo with Nested Capability
-function html5_shortcode_demo($atts, $content = null)
-{
+    function html5_shortcode_demo($atts, $content = null)
+    {
     return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
 }
 
@@ -563,31 +563,31 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 
 /*------------------------------------*\
 	MENU
-\*------------------------------------*/
+    \*------------------------------------*/
 
 
 
 // Ajouter un menu
-register_nav_menu('principal', 'Menu principal');
+    register_nav_menu('principal', 'Menu principal');
 // Ajouter un menu
-register_nav_menu('langues', 'Switch Langues');
+    register_nav_menu('langues', 'Switch Langues');
 
-add_action( 'nav_menu_css_class', 'menu_item_classes', 10, 3 );
-function menu_item_classes( $classes, $item, $args ) {
+    add_action( 'nav_menu_css_class', 'menu_item_classes', 10, 3 );
+    function menu_item_classes( $classes, $item, $args ) {
     // Gardons seulement les classes qui nous intéressent
-    $classes = array_intersect( $classes, array(
-        'menu-item',
-        'current-menu-item',
-        'current-menu-parent',
-        'menu-item-has-children'
-    ) );
+        $classes = array_intersect( $classes, array(
+            'menu-item',
+            'current-menu-item',
+            'current-menu-parent',
+            'menu-item-has-children'
+            ) );
     // Ajoutons la classe pour désigner les éléments vides
-    if ( '#' == $item->url ) {
-        $classes[] = 'empty-item';
-    }
+        if ( '#' == $item->url ) {
+            $classes[] = 'empty-item';
+        }
 
-    return $classes;
-}
+        return $classes;
+    }
 /**
  * Changer les liens vides en span
  */
