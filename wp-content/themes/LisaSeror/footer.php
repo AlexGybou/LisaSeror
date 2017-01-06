@@ -16,6 +16,48 @@
 
 		<?php wp_footer(); ?>
 
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+			<script src="<?php bloginfo('template_directory'); ?>/js/main.js"></script>
+			<script src="<?php bloginfo('template_directory'); ?>/js/share-button.js"></script>
+			<script> var config = {
+					networks: {
+						googlePlus: {
+							enabled:false // Enable Google+. [Default: true]
+
+						},
+						twitter: {
+							enabled:false      // Enable Twitter. [Default: true]
+
+						},
+						facebook: {
+							enabled:true      // Enable Facebook. [Default: true]
+							// image to be shared to Facebook [Default: config.image]
+						},
+						pinterest: {
+							enabled:false      // Enable Pinterest. [Default: true]
+							// text to be shared alongside your link to Pinterest [Default: config.description]
+						},
+						reddit: {
+							enabled:false  // Enable Reddit. [Default: true]
+
+						},
+						linkedin: {
+							enabled:false      // Enable LinkedIn. [Default: true]
+
+						},
+						whatsapp: {
+							enabled:false      // Enable WhatsApp. [Default: true]
+
+						},
+						email: {
+							enabled:true      // Enable Email. [Default: true]
+
+						}
+					}
+				}
+				var share = new ShareButton(config);
+			</script>
+
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
@@ -25,6 +67,7 @@
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
 		</script>
+
 
 	</body>
 </html>
