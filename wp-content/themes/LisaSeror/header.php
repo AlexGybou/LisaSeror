@@ -4,13 +4,15 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 	<link href="//www.google-analytics.com" rel="dns-prefetch">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri().'/css/style.css'; ?>"  >
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/style.css"/>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/menu.css"/>
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/home.css"/>
 	<link href="<?php bloginfo( 'template_directory' ); ?>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<!--	<link rel="stylesheet" href="style.css">-->
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -26,7 +28,7 @@
 
 </head>
 <body <?php body_class(); ?>>
-
+<?php if (!is_page('home') ):?>
 	<div id="wrapper" class="">
 		<div class="overlay" style="display: none;"></div>
 		<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
@@ -60,6 +62,7 @@
 
 
 	</div>
+<?php endif; ?>
 
 	<!-- wrapper -->
 	<div class="wrapper">
