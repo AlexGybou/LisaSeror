@@ -63,7 +63,7 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 // HTML5 Blank navigation
-function html5blank_nav()
+/*function html5blank_nav()
 {
 	wp_nav_menu(
 	array(
@@ -85,7 +85,7 @@ function html5blank_nav()
 		'walker'          => ''
 		)
 	);
-}
+}*/
 
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
@@ -123,14 +123,14 @@ function html5blank_styles()
 }
 
 // Register HTML5 Blank Navigation
-function register_html5_menu()
+/*function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
         'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
     ));
-}
+}*/
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = '')
@@ -344,7 +344,7 @@ add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_hea
 add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
-add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
+/*add_action('init', 'register_html5_menu');*/ // Add HTML5 Blank Menu
 /*add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type*/
 add_action('init', 'create_post_type_galerie'); // Add our HTML5 Blank Custom Post Type
 add_action('init', 'create_post_type_videos'); // Add our HTML5 Blank Custom Post Type
@@ -559,5 +559,55 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+
+/*------------------------------------*\
+	MENU
+\*------------------------------------*/
+
+
+
+// Ajouter un menu
+register_nav_menu('principal', 'Menu principal');
+// Ajouter un menu
+register_nav_menu('langues', 'Switch Langues');
+
+add_action( 'nav_menu_css_class', 'menu_item_classes', 10, 3 );
+function menu_item_classes( $classes, $item, $args ) {
+    // Gardons seulement les classes qui nous intéressent
+    $classes = array_intersect( $classes, array(
+        'menu-item',
+        'current-menu-item',
+        'current-menu-parent',
+        'menu-item-has-children'
+    ) );
+    // Ajoutons la classe pour désigner les éléments vides
+    if ( '#' == $item->url ) {
+        $classes[] = 'empty-item';
+    }
+
+    return $classes;
+}
+/**
+ * Changer les liens vides en span
+ */
+add_action( 'walker_nav_menu_start_el', 'empty_nav_links_to_span', 10, 4 );
+function empty_nav_links_to_span( $item_output, $item, $depth, $args ) {
+    $menu_items = array(48,51);
+    if (in_array($item->ID, $menu_items)) {
+        $item_output = preg_replace( '/<a.*?>(.*)<\/a>/', '<span>$1 <i class="fa fa-chevron-down pull-right" aria-hidden="true"></i></span>', $item_output );
+    }
+    return $item_output;
+}
+add_action( 'walker_nav_menu_start_el', 'contact_va_link', 10, 4 );
+function contact_va_link( $item_output, $item, $depth, $args ) {
+    $menu_items = array(149);
+    if (in_array($item->ID, $menu_items)) {
+        $item_output = preg_replace( '/<a.*?>(.*)<\/a>/', '<a href="#inline" data-lity>$1</a>', $item_output );
+    }
+    return $item_output;
+}
+
+
 
 ?>
