@@ -37,6 +37,7 @@
     background: url("../img/bg-lisa.jpg") no-repeat;
     background-size: cover;
 
+
 }
 
 .src {
@@ -79,4 +80,16 @@
 .btn-intro:hover, .btn-intro:focus {
     color: #797979;
     outline: none !important;
+}
+
+.contour {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 98%;
+    height: 96%;
+    margin-left: 1%;
+    margin-top: 1%;
+    border: 15px solid white;
 }

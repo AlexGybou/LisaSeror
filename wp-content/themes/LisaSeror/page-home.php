@@ -15,7 +15,7 @@
     </a>
 </div>
 
-
+<div class="contour"></div>
 <div class="img-intro">
 
 
