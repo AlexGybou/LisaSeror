@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
 /* SAHRE */
 
 share-button {
@@ -266,6 +267,11 @@ share-button .sb-social li[class*='pinterest']:after {
     color: white;
 }
 /**************************MENU********************************/
+
+.navbar {
+    font-family: "Raleway", sans-serif;
+}
+
 .navbar ul li span{
     cursor: pointer;
     color: #dddddd;
@@ -311,6 +317,13 @@ share-button .sb-social li[class*='pinterest']:after {
     text-decoration: none;
     text-transform: uppercase;
 }
+
+/*#wrapper.toggled #sidebar-wrapper .menu-principal-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}*/
+
 .menu-principal-container ul ul {
     display: none;
 }
@@ -436,7 +449,7 @@ share-button .sb-social li[class*='pinterest']:after {
 }
 .sidebar-nav li a:hover, .sidebar-nav li a:active, .sidebar-nav li a:focus, .sidebar-nav li.open a:hover, .sidebar-nav li.open a:active, .sidebar-nav li.open a:focus {
     background-color: transparent;
-    color: #ffffff;
+    color: #546e7a;
     text-decoration: none;
 }
 .overlay {
@@ -496,12 +509,11 @@ share-button .sb-social li[class*='pinterest']:after {
 }
 
 .navbar ul li a {
-    font-size: 1.2em;
+    font-size: 16px;
     color: #37474f;
     display: block;
     padding: 0px 15px 30px 30px;
     text-decoration: none;
-    text-transform: uppercase;
     font-weight: bold;
 
 }
@@ -519,4 +531,16 @@ share-button .sb-social li[class*='pinterest']:after {
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
+}
+
+.navbar ul li a:hover::before {
+    content: '-  ';
+}
+
+.navbar ul li a:hover::after{
+    content: '  -';
+}
+
+#logo-menu {
+    margin-bottom: 35px;
 }

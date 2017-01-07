@@ -33,6 +33,7 @@
 		<div class="overlay" style="display: none;"></div>
 		<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
 			<ul class="nav sidebar-nav">
+				<a href="<?php echo get_home_url() ; ?>"><img id="logo-menu" src="<?php bloginfo('template_directory')?>/img/logo_LS.PNG"  width="200px" height="200px"></a>
 				<?php if ( is_super_admin() ):?>
 					<li>
 						<a href="<?php echo get_dashboard_url(); ?>"><i class="fa fa-tachometer"></i> Tableau de bord</a>
