@@ -1,4 +1,5 @@
-<?php get_header(); ?>	
+<?php get_header(); ?>
+
 <div class="container">
 	<div class="row">
 		<?php $loop = new WP_Query( array( 'post_type' => 'oeuvres', 'posts_per_page' => '10' ) ); ?>
@@ -11,3 +12,5 @@
 		<?php endwhile; wp_reset_query(); ?>
 	</div>
 </div>
+
+<?php get_footer(); ?>
