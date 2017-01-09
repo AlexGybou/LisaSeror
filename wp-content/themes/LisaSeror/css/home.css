@@ -93,3 +93,11 @@
     margin-top: 1%;
     border: 15px solid white;
 }
+
+.padding-oeuvres {
+    margin-bottom: 30px !important;
+}
+
+.test-oeuvres:after {
+    box-sizing: border-box;
+}
