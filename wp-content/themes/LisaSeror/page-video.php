@@ -1,5 +1,3 @@
-<?php header_remove("X-Frame-Options");    header('X-Frame-Options: GOFORIT');
-?>
 <?php get_header(); ?>
 
 <div class="container">
@@ -12,7 +10,7 @@
                         $lien_youtube =  get_post_meta($post->ID, 'lien_youtube', true);
                         $lien_youtube = str_replace('https://www.youtube.com/watch?v=',"", $lien_youtube )
                         ?>
-                        <iframe width="560" height="315" src="<? echo 'https://www.youtube.com/embed/'.$lien_youtube?>" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="500" src="<? echo 'https://www.youtube.com/embed/'.$lien_youtube?>" frameborder="0" allowfullscreen></iframe>
                         <?php
 
                     }elseif(get_post_meta($post->ID, 'hebergeur_de_la_video', true) == 'DailyMotion'){
@@ -22,14 +20,14 @@
 
                         ?>
 
-                        <iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/<?php echo $lien_daily ?>" allowfullscreen></iframe>
-                        <?php
+                        <iframe frameborder="0" width="100%" height="300" src="//www.dailymotion.com/embed/video/<?php echo $lien_daily ?>" allowfullscreen></iframe>
+                           <?php
 
                     }else{
                         $lien_vimeo =  get_post_meta($post->ID, 'lien_vimeo', true);
                         $lien_vimeo = str_replace('https://vimeo.com/',"", $lien_vimeo )
                         ?>
-                        <iframe src="https://player.vimeo.com/video/<?php echo $lien_vimeo?>?color=9c00f0&title=0&byline=0&portrait=0" width="640" height="267" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <iframe src="https://player.vimeo.com/video/<?php echo $lien_vimeo?>?color=9c00f0&title=0&byline=0&portrait=0" width="100%" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         <?php
 
                     }

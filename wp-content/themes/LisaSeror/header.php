@@ -9,6 +9,10 @@
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/style.css"/>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/menu.css"/>
 	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/home.css"/>
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/css.css"/>
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/ie.css"/>
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/print.css"/>
+	<link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/css/screen.css"/>
 	<link href="<?php bloginfo( 'template_directory' ); ?>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<!--	<link rel="stylesheet" href="style.css">-->
 	
