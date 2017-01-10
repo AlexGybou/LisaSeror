@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<?php  $page = get_query_var( 'page', 1 );  ?>
+<?  if() ?>
+
 
 <div class="container">
     <div class="row">
@@ -10,7 +13,7 @@
                         $lien_youtube =  get_post_meta($post->ID, 'lien_youtube', true);
                         $lien_youtube = str_replace('https://www.youtube.com/watch?v=',"", $lien_youtube )
                         ?>
-                        <iframe width="100%" height="500" src="<? echo 'https://www.youtube.com/embed/'.$lien_youtube?>" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="300" src="<? echo 'https://www.youtube.com/embed/'.$lien_youtube?>" frameborder="0" allowfullscreen></iframe>
                         <?php
 
                     }elseif(get_post_meta($post->ID, 'hebergeur_de_la_video', true) == 'DailyMotion'){

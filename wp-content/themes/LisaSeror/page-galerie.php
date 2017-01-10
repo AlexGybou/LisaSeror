@@ -40,9 +40,7 @@
                             <img class="img-responsive padding-oeuvres"
                                      src="<?php echo get_field('oeuvre')['url']; ?>"
                                      alt="<?php echo get_field('oeuvre')['alt']; ?>"
-                            <?php echo "onclick = \"display('$images[$i]', '$title[$i]', '$tech[$i]', '$dimen[$i]', $annee[$i])\""; ?>
-
-                                onclick="display('http://localhost/LisaSeror/wp-content/uploads/2017/01/trolltunga1.jpg', 'Une oeuvre', 'peinture à l'huile', '200x300', 2015)"
+                                <?php echo "onclick = \"display('$images[$i]', '$title[$i]', '$tech[$i]', '$dimen[$i]', $annee[$i])\""; ?>
                             />
 
                         </div>
